@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EcoDomusPM", "EcoDomusPM\", "{7FCBB0D9-098F-4BF2-BD8C-7909CDDCAB88}"
+	ProjectSection(WebsiteProperties) = preProject
+		Frontpage = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/EcoDomus PM"
+		Debug.AspNetCompiler.PhysicalPath = "EcoDomusPM\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\EcoDomus PM\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/EcoDomus PM"
+		Release.AspNetCompiler.PhysicalPath = "EcoDomusPM\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\EcoDomus PM\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54036"
+		VWDVirtualPath = "/"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FCBB0D9-098F-4BF2-BD8C-7909CDDCAB88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCBB0D9-098F-4BF2-BD8C-7909CDDCAB88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCBB0D9-098F-4BF2-BD8C-7909CDDCAB88}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCBB0D9-098F-4BF2-BD8C-7909CDDCAB88}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
