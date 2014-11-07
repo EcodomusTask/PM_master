@@ -486,8 +486,8 @@
                 var charCode = (evt.which) ? evt.which : event.keyCode
                 var error = document.getElementById("lblErrorMessage");
                 if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                   
-                     error.innerHTML = "<br />Please enter numeric value only"
+                   var errorMessage= document.getElementById("hfWarrantyDurationPartsErrorMessage").value 
+                     error.innerHTML = "<br />" + errorMessage;
                   
                     return false;
                 }
@@ -655,7 +655,7 @@
                                 <asp:TextBox CssClass="SmallTextBox" ID="txtWarrantyDurationPart" Width="200px" runat="server"
                                     TabIndex="13" onkeypress="return isNumberKey(event)" onpaste="return false"  ></asp:TextBox>
                                     <asp:Label ID="lblDays" Text="Days" runat="server"></asp:Label>
-                                    <asp:Label ID="lblErrorMessage" Text="" runat="server"  ForeColor="Red"></asp:Label>
+                                    <asp:Label ID="lblErrorMessage" Text="" runat="server"  ForeColor="Red" ></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -1156,6 +1156,8 @@
     <asp:HiddenField ID="hf_WarrantyGarantyLabor_id" runat="server" />
     <asp:HiddenField ID="hf_WarrantyGarantyPart_id" runat="server" />
     <asp:HiddenField ID="hf_flag_name" runat="server" />
+   <asp:HiddenField ID="hfWarrantyDurationPartsErrorMessage" runat="server" value=""/>
+  
     </form>
 </body>
 <%--Please don't move this link to anywhere on th page--%>

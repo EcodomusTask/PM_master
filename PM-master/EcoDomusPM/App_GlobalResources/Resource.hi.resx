@@ -1797,4 +1797,13 @@
   <data name="Merge" xml:space="preserve">
     <value>मर्ज</value>
   </data>
+  <data name="Warranty_End_Date_ErrorMessage" xml:space="preserve">
+    <value>पहले वारंटी प्रारंभ दिनांक दर्ज करें</value>
+  </data>
+  <data name="Warranty_Duration_Parts_Error" xml:space="preserve">
+    <value>अंकीय मान ही दर्ज करें</value>
+  </data>
+  <data name="Warranty_End_Date" xml:space="preserve">
+    <value>वारंटी समाप्ति तिथि</value>
+  </data>
 </root>

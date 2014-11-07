@@ -3225,4 +3225,13 @@
   <data name="Merge" xml:space="preserve">
     <value>Combinar</value>
   </data>
+  <data name="Warranty_End_Date_ErrorMessage" xml:space="preserve">
+    <value>Por favor, ingrese la fecha de inicio de garantía primero</value>
+  </data>
+  <data name="Warranty_Duration_Parts_Error" xml:space="preserve">
+    <value>Por favor, introduzca el valor numérico sólo</value>
+  </data>
+  <data name="Warranty_End_Date" xml:space="preserve">
+    <value>Garantía Fecha de finalización</value>
+  </data>
 </root>

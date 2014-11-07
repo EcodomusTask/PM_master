@@ -17,6 +17,8 @@ using TypeProfile;
 using Facility;
 using System.Text.RegularExpressions;
 using EcoDomus.Common;
+using System.Resources;
+using System.Reflection;
 
 
 public partial class App_Settings_AssetProfile : System.Web.UI.Page
@@ -53,6 +55,10 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
                     //SystemRoleAccess Systemrole = new SystemRoleAccess();
                     //Systemrole.disableControls(ref btnsave);
 
+
+                    string strMessage = ((string)GetGlobalResourceObject("Resource", "Warranty_End_Date_ErrorMessage"));
+
+                    hfErrorMessage.Value = strMessage;
                     //Bind dropdown of facility present on notification window:-
                     FacilityModel fm = new FacilityModel();
                     FacilityClient fc = new FacilityClient();
@@ -1192,12 +1198,16 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
     {
         try
         {
-            string typeID = ddltypename.SelectedValue.ToString();
-            TypeProfileInfo typeInfoObject = new TypeProfileInfo();
-            int durationParts = typeInfoObject.GetDurationParts(typeID);
-            hfWarrentyDurationParts.Value = durationParts.ToString();
-            if (!string.IsNullOrEmpty(rdpwarrantytart.SelectedDate.ToString()))
-                rdpWarrentyEndDate.SelectedDate = Convert.ToDateTime(rdpwarrantytart.SelectedDate.ToString()).AddDays(durationParts);
+            int index=ddltypename.SelectedIndex;
+            if (index > 0)
+            {
+                string typeID = ddltypename.SelectedValue.ToString();
+                TypeProfileInfo typeInfoObject = new TypeProfileInfo();
+                int durationParts = typeInfoObject.GetDurationParts(typeID);
+                hfWarrentyDurationParts.Value = durationParts.ToString();
+                if (!string.IsNullOrEmpty(rdpwarrantytart.SelectedDate.ToString()))
+                    rdpWarrentyEndDate.SelectedDate = Convert.ToDateTime(rdpwarrantytart.SelectedDate.ToString()).AddDays(durationParts);
+            }
         }
         catch (Exception exc)
         {

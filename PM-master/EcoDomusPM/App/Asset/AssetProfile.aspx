@@ -277,6 +277,7 @@
         <asp:HiddenField ID="hfTypeId" runat="server" />
         <asp:HiddenField ID="hfpopupflag" runat="server" ClientIDMode="Static" />
         <asp:HiddenField ID="hfWarrentyDurationParts" runat="server" Value="0"/>
+        <asp:HiddenField ID="hfErrorMessage" runat="server" value=""/>
     <div id="divProfilePage" style="width: 100%;padding:2px;" runat="server">
         <table id="tblheader" runat="server" border="0" width="100%" style="display:none;" cellspacing="0">
             <tr>
@@ -455,9 +456,24 @@
                                                             }
                                                             else
                                                                 warrentyEnddate.clear();
-                                                        
 
 
+
+                                                        }
+
+
+                                                        function EndDateSelectedChanged(sender, eventArgs) {
+                                                       
+                                                        warrantyStartdate = $find("<%= rdpwarrantytart.ClientID %>");
+                                                        var errorMessage = document.getElementById('lblWarrentyEnd')
+                                                            var startDate=warrantyStartdate.get_selectedDate();
+                                                            if (startDate == null) {
+                                                                sender.clear();
+                                                                   var hferrorMessage = document.getElementById('hfErrorMessage').value;
+                                                                   errorMessage.innerHTML = hferrorMessage;
+                                                            }
+                                                            else
+                                                                errorMessage.innerHTML = "";
                                                         }
 
                                                             //]]>
@@ -521,12 +537,17 @@
 
                 <td align="left" style="width: 220px">
 
+
+
+
+
                
                     <telerik:RadDatePicker TabIndex="9" AutoPostBack="false" ID="rdpWarrentyEndDate" runat="server" Width="180px">
-                        <DateInput ID="DateInput2" runat="server" LabelCssClass="radLabelCss_Gray"  DateFormat="MM/dd/yy" DisplayDateFormat="MM/dd/yy"  >
+                        <DateInput ID="DateInput2" runat="server" LabelCssClass="radLabelCss_Gray"  DateFormat="MM/dd/yy" DisplayDateFormat="MM/dd/yy"  OnDateSelected="EndDateSelectedChanged"  >
                         </DateInput>
-                        <Calendar ID="Calendar2" runat="server" >
+                        <Calendar ID="Calendar2" runat="server"  >
                         </Calendar>
+                        <ClientEvents  OnDateSelected="EndDateSelectedChanged" />
                         <DatePopupButton TabIndex="10" />
                    </telerik:RadDatePicker>
                     <%--<asp:RequiredFieldValidator ValidationGroup="valid" ID="RequiredFieldValidator2"

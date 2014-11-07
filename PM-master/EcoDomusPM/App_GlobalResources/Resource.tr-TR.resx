@@ -3105,4 +3105,13 @@
   <data name="DUT_TONNE_FORCE_METERS_SHORT" xml:space="preserve">
     <value>tf·m</value>
   </data>
+  <data name="Warranty_End_Date_ErrorMessage" xml:space="preserve">
+    <value>İlk garanti başlangıç tarihini girin</value>
+  </data>
+  <data name="Warranty_Duration_Parts_Error" xml:space="preserve">
+    <value>Sayısal değer sadece giriniz</value>
+  </data>
+  <data name="Warranty_End_Date" xml:space="preserve">
+    <value>Garanti Bitiş Tarihi</value>
+  </data>
 </root>

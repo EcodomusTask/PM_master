@@ -3153,4 +3153,13 @@
   <data name="DUT_TONNE_FORCE_METERS_SHORT" xml:space="preserve">
     <value>тс·м</value>
   </data>
+  <data name="Warranty_End_Date_ErrorMessage" xml:space="preserve">
+    <value>Пожалуйста, введите гарантийный срок начала первый</value>
+  </data>
+  <data name="Warranty_Duration_Parts_Error" xml:space="preserve">
+    <value>Пожалуйста, введите только числовое значение</value>
+  </data>
+  <data name="Warranty_End_Date" xml:space="preserve">
+    <value>Гарантия Окончание</value>
+  </data>
 </root>

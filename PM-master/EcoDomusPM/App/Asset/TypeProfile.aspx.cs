@@ -76,6 +76,10 @@ public partial class App_Asset_TypeProfile : System.Web.UI.Page
                             btnBrowseByManufacturer.Visible = false;
                             btnAddByModelNumber.Visible = true;
                         }
+
+                        string strMessage = ((string)GetGlobalResourceObject("Resource", "Warranty_Duration_Parts_Error"));
+
+                        hfWarrantyDurationPartsErrorMessage.Value = strMessage;
                     }
                     else
                     {

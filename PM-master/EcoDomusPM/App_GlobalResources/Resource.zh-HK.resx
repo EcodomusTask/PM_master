@@ -3108,4 +3108,13 @@
   <data name="DUT_TONNE_FORCE_METERS_SHORT" xml:space="preserve">
     <value>tf·m</value>
   </data>
+  <data name="Warranty_End_Date_ErrorMessage" xml:space="preserve">
+    <value>请先保修起始日期输入</value>
+  </data>
+  <data name="Warranty_End_Date" xml:space="preserve">
+    <value>保修期结束日期</value>
+  </data>
+  <data name="Warranty_Duration_Parts_Error" xml:space="preserve">
+    <value>请只输入数字值</value>
+  </data>
 </root>

@@ -2979,4 +2979,13 @@
   <data name="DUT_TONNE_FORCE_METERS_SHORT" xml:space="preserve">
     <value>tf·m</value>
   </data>
+  <data name="Warranty_End_Date_ErrorMessage" xml:space="preserve">
+    <value>最初の保証開始日を入力してください</value>
+  </data>
+  <data name="Warranty_Duration_Parts_Error" xml:space="preserve">
+    <value>数値のみを入力してください</value>
+  </data>
+  <data name="Warranty_End_Date" xml:space="preserve">
+    <value>保証の終了日</value>
+  </data>
 </root>
