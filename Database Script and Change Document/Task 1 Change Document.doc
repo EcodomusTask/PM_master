@@ -1,0 +1,25 @@
+Assumption :
+
+Warranty Duration Parts field in TypeProfile is assumed as number of days.
+
+
+
+Code Changes:
+
+1)AssetProfile.aspx
+2)AssetProfile.aspx.cs
+3)AssetProfileNew.aspx
+4)AssetProfileNew.aspx.cs
+5)TypeProfile.aspx
+6)Created new Class "TypeProfileInfo.cs" in App_Code/common
+
+
+
+Database changes :
+
+Altered Procedure [proc_get_assetprofile_byid]  :
+Added new variable @WarrantyEndDate
+
+
+
+
