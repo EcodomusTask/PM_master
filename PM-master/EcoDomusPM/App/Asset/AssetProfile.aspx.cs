@@ -52,13 +52,8 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
                 string pagename = GetCurrentPageName();
                 if (!IsPostBack)
                 {
-                    //SystemRoleAccess Systemrole = new SystemRoleAccess();
-                    //Systemrole.disableControls(ref btnsave);
+                    hfErrorMessage.Value = (string)GetGlobalResourceObject("Resource", "Warranty_End_Date_ErrorMessage");
 
-
-                    string strMessage = ((string)GetGlobalResourceObject("Resource", "Warranty_End_Date_ErrorMessage"));
-
-                    hfErrorMessage.Value = strMessage;
                     //Bind dropdown of facility present on notification window:-
                     FacilityModel fm = new FacilityModel();
                     FacilityClient fc = new FacilityClient();
@@ -121,18 +116,6 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
                         Get_AssetProfile(hfAssetid.Value);
 
                     }
-
-
-
-                    //else
-                    //{
-
-                    //    hfAssetid.Value = Guid.Empty.ToString();
-                    //    EnableControl();
-                    //}
-
-
-
                 }
             }
             else
@@ -448,7 +431,7 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
                     hfFacilityid.Value = AssetProfile.Tables[0].Rows[0]["fk_facility_id"].ToString();
 
                     //Sumeet
-                    string  warrantyEnd = AssetProfile.Tables[0].Rows[0]["WarrantyEndDate"].ToString();
+                    string warrantyEnd = AssetProfile.Tables[0].Rows[0]["WarrantyEndDate"].ToString();
                     warranty_date_calculations(Type_Id, warrantyEnd);
                     //End Sumeet
                 }
@@ -497,7 +480,7 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
         }
     }
 
- 
+
     protected string insert_update_Asset(string facility)
     {
         // string AssetId = (Guid.Empty).ToString();
@@ -894,7 +877,7 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
 
     }
 
-   
+
     protected string chklocation()
     {
         RadTreeView rtvlocation = (RadTreeView)UCLocation1.FindControl("rtvLocationSpaces");
@@ -1156,13 +1139,13 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
 
     }
 
-    #region changes by Sumeet 
+    #region changes by Sumeet
 
     /// <summary>
     /// Warranty date calculations according to warrenty duration parts on type profile
     /// </summary>
-    /// <param name="Type_Id"></param>
-    /// <param name="warrantyEnd"></param>
+    /// <param name="Type_Id">for getting warranty duration part</param>
+    /// <param name="warrantyEnd">for checking already present date in database</param>
     protected void warranty_date_calculations(Guid Type_Id, string warrantyEnd)
     {
         try
@@ -1187,8 +1170,6 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
         }
     }
 
-
-
     /// <summary>
     ///  Index change function added for getting warrenty duration part for perticular type when type is changed for component profile
     /// </summary>
@@ -1197,9 +1178,8 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
     protected void ddltypename_SelectedIndexChanged(object o, Telerik.Web.UI.RadComboBoxSelectedIndexChangedEventArgs e)
     {
         try
-        {
-            int index=ddltypename.SelectedIndex;
-            if (index > 0)
+        {            
+            if (ddltypename.SelectedIndex > 0)
             {
                 string typeID = ddltypename.SelectedValue.ToString();
                 TypeProfileInfo typeInfoObject = new TypeProfileInfo();
@@ -1218,5 +1198,5 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
 
     }
 
-    #endregion 
+    #endregion
 }

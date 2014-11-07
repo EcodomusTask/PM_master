@@ -945,9 +945,9 @@ public partial class App_Settings_AssetProfile : System.Web.UI.Page
     /// <summary>
     /// Warranty date calculations according to warrenty duration parts on type profile
     /// </summary>
-    /// <param name="Type_Id"></param>
-    /// <param name="warrantyEnd"></param>
-    /// <param name="warrantyStartDate"></param>
+    /// <param name="Type_Id"> for getting warranty duration part</param>
+    /// <param name="warrantyEnd"> for checking already present date in database</param>
+    /// <param name="warrantyStartDate">for calculating warranty end date</param>
     protected void warranty_date_calculations(Guid Type_Id, string warrantyEnd, string warrantyStartDate)
     {
         try

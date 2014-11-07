@@ -19,6 +19,7 @@ namespace EcoDomus.Common
             // TODO: Add constructor logic here
             //
         }
+
         /// <summary>
         /// method for finding Warrenty Duration Parts from Type profile ID
         /// </summary>

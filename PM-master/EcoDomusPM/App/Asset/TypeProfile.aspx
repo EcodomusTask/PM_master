@@ -484,9 +484,9 @@
 
             function isNumberKey(evt) {
                 var charCode = (evt.which) ? evt.which : event.keyCode
-                var error = document.getElementById("lblErrorMessage");
+                var error = document.getElementById("<%=lblErrorMessage.ClientID %>");
                 if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                   var errorMessage= document.getElementById("hfWarrantyDurationPartsErrorMessage").value 
+                    var errorMessage = document.getElementById("<%=hfWarrantyDurationPartsErrorMessage.ClientID %>").value 
                      error.innerHTML = "<br />" + errorMessage;
                   
                     return false;

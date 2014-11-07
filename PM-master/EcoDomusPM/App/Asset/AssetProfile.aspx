@@ -7,15 +7,16 @@
 <html>
 <head>
     <title>Component Profile </title>
-     <link rel="stylesheet" type="text/css" href="../../App_Themes/EcoDomus/style.css" />
-     <link href="../../App_Themes/EcoDomus/radmenu.css" rel="stylesheet" type="text/css" />
-     <link rel="Stylesheet" type="text/css" href="../../App_Themes/EcoDomus/style_new_ui_pm.css" />
-     <link rel="stylesheet" type="text/css" href="../../App_Themes/EcoDomus/NEWUI_Grid.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../App_Themes/EcoDomus/style.css" />
+    <link href="../../App_Themes/EcoDomus/radmenu.css" rel="stylesheet" type="text/css" />
+    <link rel="Stylesheet" type="text/css" href="../../App_Themes/EcoDomus/style_new_ui_pm.css" />
+    <link rel="stylesheet" type="text/css" href="../../App_Themes/EcoDomus/NEWUI_Grid.css" />
     <telerik:RadFormDecorator ID="rdfTaskEquipment" runat="server" Skin="Default" DecoratedControls="Buttons,RadioButtons,Scrollbars" />
 </head>
-<body style="background:transparent;background-image:url('../Images/asset_zebra-bkgrd_gray2.PNG');  padding: 0px; margin: 0 0 0 0;">
-    <form id="form1" runat="server" class="tdZebraLightGray" style="margin: 0 0 0 0" defaultfocus="txtassetname">
+<body style="background: transparent; background-image: url('../Images/asset_zebra-bkgrd_gray2.PNG');
+    padding: 0px; margin: 0 0 0 0;">
+    <form id="form1" runat="server" class="tdZebraLightGray" style="margin: 0 0 0 0"
+    defaultfocus="txtassetname">
     <asp:ScriptManager ID="Scriptmanager1" runat="server">
     </asp:ScriptManager>
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
@@ -41,7 +42,7 @@
             }
 
             function RefreshParent() {
-               
+
                 str = '../Asset/AssetMenu.aspx?assetid=' + document.getElementById('hfAssetId').value + "&facility_id" + document.getElementById('hfFacilityid').value;
                 window.parent.location.href = str;
             }
@@ -96,7 +97,7 @@
             //              return false;
             //      }
             function chknodes() {
-              
+
                 // To make asset name compulsary field
                 var x = document.getElementById("txtassetname").value;
                 if (x == null || x == "") {
@@ -120,7 +121,7 @@
 
 
                 if ($find("UCLocation1_rtvLocationSpaces") != null) {
-                  
+
                     var parent = 0;
                     var child = 0;
                     for (var i = 0; i < $find("UCLocation1_rtvLocationSpaces").get_allNodes().length; i++) {
@@ -146,10 +147,10 @@
                         alert('Please add new space');
                         return false;
                     }
-                    
+
                     if ($find("UCLocation1_rtvLocationSpaces").get_checkedNodes().length == 0) {
 
-                        if ((document.getElementById('hfFacilityid').value == "")||(document.getElementById('hfFacilityid').value=="00000000-0000-0000-0000-000000000000")) {
+                        if ((document.getElementById('hfFacilityid').value == "") || (document.getElementById('hfFacilityid').value == "00000000-0000-0000-0000-000000000000")) {
                             var notification = $find("<%=RadNotification1.ClientID %>");
                             notification.show();
 
@@ -186,7 +187,7 @@
 
             }
 
-              //This function returns rad window instance to resize it popup
+            //This function returns rad window instance to resize it popup
             function GetRadWindow() {
                 var oWindow = null;
                 if (window.radWindow) oWindow = window.radWindow;
@@ -194,7 +195,7 @@
                 return oWindow;
             }
             function resizePopup(str) {
-              
+
                 window.document.clear();
                 var wnd = GetRadWindow();
                 if (wnd != null) {
@@ -233,7 +234,7 @@
             function stateTreeViewTest() {
                 return stateTreeView;
             }
-            
+
             function closewindow() {
                 window.close();
             }
@@ -264,36 +265,32 @@
                 resizePopup('datePopCollaps2');
             }
         </script>
-
-
-
-       
-      
     </telerik:RadCodeBlock>
-
-     <asp:HiddenField ID="hfAssetid" runat="server" />
-        <asp:HiddenField ID="hfFacilityid" runat="server" />
-        <asp:HiddenField runat="server" ID="myJSString" />
-        <asp:HiddenField ID="hfTypeId" runat="server" />
-        <asp:HiddenField ID="hfpopupflag" runat="server" ClientIDMode="Static" />
-        <asp:HiddenField ID="hfWarrentyDurationParts" runat="server" Value="0"/>
-        <asp:HiddenField ID="hfErrorMessage" runat="server" value=""/>
-    <div id="divProfilePage" style="width: 100%;padding:2px;" runat="server">
-        <table id="tblheader" runat="server" border="0" width="100%" style="display:none;" cellspacing="0">
+    <asp:HiddenField ID="hfAssetid" runat="server" />
+    <asp:HiddenField ID="hfFacilityid" runat="server" />
+    <asp:HiddenField runat="server" ID="myJSString" />
+    <asp:HiddenField ID="hfTypeId" runat="server" />
+    <asp:HiddenField ID="hfpopupflag" runat="server" ClientIDMode="Static" />
+    <asp:HiddenField ID="hfWarrentyDurationParts" runat="server" Value="0" />
+    <asp:HiddenField ID="hfErrorMessage" runat="server" Value="" />
+    <div id="divProfilePage" style="width: 100%; padding: 2px;" runat="server">
+        <table id="tblheader" runat="server" border="0" width="100%" style="display: none;"
+            cellspacing="0">
             <tr>
-                <td class="wizardHeadImage" style="display:none" >
+                <td class="wizardHeadImage" style="display: none">
                     <div class="wizardLeftImage">
-                        <asp:Label ID="lblpopup" runat="server" Text="" Visible="false" Font-Names="Verdana" Font-Size="11pt"></asp:Label>
+                        <asp:Label ID="lblpopup" runat="server" Text="" Visible="false" Font-Names="Verdana"
+                            Font-Size="11pt"></asp:Label>
                     </div>
                     <div class="wizardRightImage">
                         <asp:ImageButton ID="ibtn_close" Width="15px" runat="server" ImageUrl="~/App/Images/Icons/icon-close.png"
-                          OnClientClick="Javascript:closewindow();" />
+                            OnClientClick="Javascript:closewindow();" />
                     </div>
                 </td>
             </tr>
-      </table>
+        </table>
         <table style="margin: 10px 20px 0px 20px;" border="0">
-           <%-- <caption>
+            <%-- <caption>
                 <asp:Label ID="lblpopup" runat="server" Text=""></asp:Label>
             </caption>--%>
             <tr>
@@ -301,7 +298,7 @@
                     <asp:Label ID="lbl_AssetName" runat="server" Text="<%$Resources:Resource, Name%>"></asp:Label>:
                     <%--<span id="spanName" runat="server" style="color: Red"></span>:--%>
                 </th>
-                <td align="left"  valign="bottom" >
+                <td align="left" valign="bottom">
                     <asp:TextBox TabIndex="1" ID="txtassetname" CssClass="SmallTextBox" runat="server"></asp:TextBox>
                     <%--<asp:RequiredFieldValidator ValidationGroup="valid" ID="RequiredFieldValidator1"
                         Display="Dynamic" SetFocusOnError="true" runat="server" ControlToValidate="txtassetname"
@@ -310,12 +307,11 @@
                         ForeColor="Red"></asp:Label>
                     <asp:Label ID="lblname" CssClass="linkText" runat="Server"></asp:Label>
                 </td>
-               
                 <th align="left" class="style4" width="25%" valign="bottom">
                     <asp:Label ID="lbl_Description" runat="server" Text="<%$Resources:Resource, Description%>"></asp:Label>:
                     <%--  <span id="spandescription" runat="server"></span>:--%>
                 </th>
-                <td align="left"  valign="bottom">
+                <td align="left" valign="bottom">
                     <asp:TextBox TabIndex="7" ID="txtdescrption" CssClass="SmallTextBox" runat="server"></asp:TextBox>
                     <asp:Label ID="lbldescription" CssClass="linkText" runat="Server"></asp:Label>
                     <%-- <asp:RequiredFieldValidator ValidationGroup="valid" ID="RequiredFieldValidator2"
@@ -328,8 +324,8 @@
                     <asp:Label ID="lbl_TypeName" runat="server" Text="<%$Resources:Resource, Type_Name%>"></asp:Label>:
                 </th>
                 <td>
-                    <telerik:RadComboBox TabIndex="2" ID="ddltypename" Filter="Contains" Height="100px" AutoPostBack=true
-                        Width="180px" runat="server"   onselectedindexchanged="ddltypename_SelectedIndexChanged">
+                    <telerik:RadComboBox TabIndex="2" ID="ddltypename" Filter="Contains" Height="100px"
+                        AutoPostBack="true" Width="180px" runat="server" OnSelectedIndexChanged="ddltypename_SelectedIndexChanged">
                     </telerik:RadComboBox>
                     <%--<asp:RequiredFieldValidator ValidationGroup="valid" InitialValue="---Select---" ID="RequiredFieldValidator3"
                         SetFocusOnError="true" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="ddltypename"
@@ -338,7 +334,6 @@
                         ForeColor="Red"></asp:Label>
                     <asp:LinkButton ID="lbltypename" runat="server" CssClass="linkText" OnClick="typelink"></asp:LinkButton>
                 </td>
-               
                 <th align="left" class="style4">
                     <asp:Label ID="lbl_SerialNo" runat="server" Text="<%$Resources:Resource,  Serial_Number%>"></asp:Label>:
                     <%--<span id="serialNoSpan" runat="server"></span>:--%>
@@ -357,7 +352,6 @@
                     <asp:TextBox TabIndex="3" ID="txtbarcode" CssClass="SmallTextBox" runat="server"></asp:TextBox>
                     <asp:Label ID="lblbarcode" CssClass="linkText" runat="Server"></asp:Label>
                 </td>
-               
                 <th align="left" class="style4">
                     <asp:Label ID="lbl_InstallationDate" runat="server" Text="<%$Resources:Resource,   Installation_Date%>"></asp:Label>:
                     <%--  <span id="spanManufacturer" runat="server" style="color: Red"></span>:--%>
@@ -372,8 +366,9 @@
 
 <DatePopupButton ImageUrl="" HoverImageUrl="" TabIndex="9" ></DatePopupButton>
                     </telerik:RadDatePicker>--%>
-                    <telerik:RadDatePicker TabIndex="9" AutoPostBack="false" ID="rdpinstallationdate" ShowPopupOnFocus="true"  ClientEvents-OnPopupOpening="resizePopup('str')"
-                        runat="server" Width="180px">
+                    <telerik:RadDatePicker TabIndex="9" AutoPostBack="false" ID="rdpinstallationdate"
+                        ShowPopupOnFocus="true" ClientEvents-OnPopupOpening="resizePopup('str')" runat="server"
+                        Width="180px">
                         <Calendar ID="Calendar1" UseRowHeadersAsSelectors="False" runat="server" UseColumnHeadersAsSelectors="False"
                             ViewSelectorText="x">
                         </Calendar>
@@ -397,7 +392,6 @@
                     <asp:TextBox TabIndex="5" ID="txtassetidentifier" CssClass="SmallTextBox" runat="server"></asp:TextBox>
                     <asp:Label ID="lblassetidentifier" CssClass="linkText" runat="server"></asp:Label>
                 </td>
-              
                 <th align="left" class="style2">
                     <asp:Label ID="lbl_TagNo" runat="server" Text="<%$Resources:Resource,Tag_Number%>"></asp:Label>:
                     <%-- <span id="spanmodel" runat="server"></span>:--%>
@@ -412,8 +406,8 @@
                     <asp:Label ID="lbl_ConditionType" runat="server" Text="<%$Resources:Resource,Condition_type%>"></asp:Label>:
                 </th>
                 <td align="left" valign="top">
-                    <telerik:RadComboBox ID="rcmbConditionType" runat="server" Sort="Ascending" TabIndex="6" Height="85"
-                        InitialValue="--Select--" Width="180px">
+                    <telerik:RadComboBox ID="rcmbConditionType" runat="server" Sort="Ascending" TabIndex="6"
+                        Height="85" InitialValue="--Select--" Width="180px">
                         <Items>
                             <%--  <telerik:RadComboBoxItem runat="server" Text="Good" Value="1" />
                            <telerik:RadComboBoxItem runat="server" Text="Bad" Value="2" />
@@ -430,65 +424,61 @@
                     </telerik:RadComboBox>
                     <asp:Label ID="lblConditionTypeValue" CssClass="linkText" runat="server"></asp:Label>
                 </td>
-              
                 <th align="left">
                     <asp:Label ID="lbl_WarrantyStDate" runat="server" Text="<%$Resources:Resource,Warranty_Start_Date%>"></asp:Label>:
                     <%--   <span id="span2" runat="server" style="color: Red"></span>:--%>
                 </th>
                 <td align="left">
+                    <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
+                        <script language="javascript" type="text/javascript">
+                                                        
 
-                 <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
-                                                    <script language="javascript" type="text/javascript">
-                                                        //<![CDATA[
-
-                                                        function DateSelectedChanged(sender, eventArgs) {
-
-                                                  
-                                                            var warrentyEnddate = $find("<%= rdpWarrentyEndDate.ClientID %>");
-                                                            var waraantyStartDate = eventArgs.get_newDate();
+                            function DateSelectedChanged(sender, eventArgs) {
 
 
-                                                            if (waraantyStartDate != null) {
-                                                                var parts = document.getElementById('hfWarrentyDurationParts').value
-                                                                waraantyStartDate.setDate(waraantyStartDate.getDate() + parseInt(parts));
-
-                                                                warrentyEnddate.set_selectedDate(waraantyStartDate);
-                                                            }
-                                                            else
-                                                                warrentyEnddate.clear();
+                                var warrentyEnddate = $find("<%= rdpWarrentyEndDate.ClientID %>");
+                                var waraantyStartDate = eventArgs.get_newDate();
 
 
+                                if (waraantyStartDate != null) {
+                                    var parts = document.getElementById("<%=hfWarrentyDurationParts.ClientID %>").value
+                                    waraantyStartDate.setDate(waraantyStartDate.getDate() + parseInt(parts));
 
-                                                        }
+                                    warrentyEnddate.set_selectedDate(waraantyStartDate);
+                                }
+                                else
+                                    warrentyEnddate.clear();
+                                    
+
+                            }
 
 
-                                                        function EndDateSelectedChanged(sender, eventArgs) {
-                                                       
-                                                        warrantyStartdate = $find("<%= rdpwarrantytart.ClientID %>");
-                                                        var errorMessage = document.getElementById('lblWarrentyEnd')
-                                                            var startDate=warrantyStartdate.get_selectedDate();
-                                                            if (startDate == null) {
-                                                                sender.clear();
-                                                                   var hferrorMessage = document.getElementById('hfErrorMessage').value;
-                                                                   errorMessage.innerHTML = hferrorMessage;
-                                                            }
-                                                            else
-                                                                errorMessage.innerHTML = "";
-                                                        }
+                            function EndDateSelectedChanged(sender, eventArgs) {
 
-                                                            //]]>
-                                                    </script>
-                                                </telerik:RadScriptBlock>
-                  
-                  
-                    <telerik:RadDatePicker TabIndex="11" AutoPostBack="false" ID="rdpwarrantytart" ShowPopupOnFocus="true" runat="server" 
-                        Width="180px">
+                                warrantyStartdate = $find("<%= rdpwarrantytart.ClientID %>");
+                                var errorMessage = document.getElementById("<%= lblWarrentyEnd.ClientID %>")
+                                var startDate = warrantyStartdate.get_selectedDate();
+                                if (startDate == null) {
+                                    sender.clear();
+                                    var hferrorMessage = document.getElementById("<%= hfErrorMessage.ClientID %>").value;
+                                    errorMessage.innerHTML = hferrorMessage;
+                                }
+                                else
+                                    errorMessage.innerHTML = "";
+                            }
+
+                                                           
+                        </script>
+                    </telerik:RadScriptBlock>
+                    <telerik:RadDatePicker TabIndex="11" AutoPostBack="false" ID="rdpwarrantytart" ShowPopupOnFocus="true"
+                        runat="server" Width="180px">
                         <DateInput ID="DateInput3" runat="server" LabelCssClass="radLabelCss_Gray" DateFormat="MM/dd/yy"
                             DisplayDateFormat="MM/dd/yy" TabIndex="11">
                         </DateInput>
                         <Calendar ID="Calendar3" runat="server">
                         </Calendar>
-                         <ClientEvents OnPopupOpening="resizeParentPopupWindowOnOpen2" OnPopupClosing="resizeParentPopupWindowOnClose2" OnDateSelected="DateSelectedChanged" />
+                        <ClientEvents OnPopupOpening="resizeParentPopupWindowOnOpen2" OnPopupClosing="resizeParentPopupWindowOnClose2"
+                            OnDateSelected="DateSelectedChanged" />
                         <DatePopupButton TabIndex="11" />
                     </telerik:RadDatePicker>
                     <%--<asp:RequiredFieldValidator ValidationGroup="valid" ID="RequiredFieldValidator2"
@@ -501,7 +491,7 @@
                 <th align="left" valign="top">
                     <asp:Label ID="lbl_Location" runat="server" Text="<%$Resources:Resource,Location%>"></asp:Label>:
                 </th>
-                <td style="width:20%;">
+                <td style="width: 20%;">
                     <asp:Label ID="lblspace" runat="server" CssClass="linkText"></asp:Label>
                     <%--<telerik:RadGrid ID="rgLocation" runat="server" AllowPaging="true" Width="100%" BorderWidth="1px"
                         CellPadding="0" AutoGenerateColumns="False" Skin="Hay" PageSize="5" AllowSorting="true"
@@ -524,44 +514,34 @@
                             </Columns>
                         </MasterTableView>
                     </telerik:RadGrid>--%>
-                    
-                    <uc1:UCLocation ID="UCLocation1" runat="server"  />
+                    <uc1:UCLocation ID="UCLocation1" runat="server" />
                 </td>
-
-
-
-                   <th align="left">
+                <th align="left">
                     <asp:Label ID="lblWarrentyEndDate" runat="server" Text="<%$Resources:Resource,Warranty_End_Date%>"></asp:Label>:
                     <%--  <span id="span2" runat="server" style="color: Red"></span>:--%>
                 </th>
-
                 <td align="left" style="width: 220px">
-
-
-
-
-
-               
-                    <telerik:RadDatePicker TabIndex="9" AutoPostBack="false" ID="rdpWarrentyEndDate" runat="server" Width="180px">
-                        <DateInput ID="DateInput2" runat="server" LabelCssClass="radLabelCss_Gray"  DateFormat="MM/dd/yy" DisplayDateFormat="MM/dd/yy"  OnDateSelected="EndDateSelectedChanged"  >
+                    <telerik:RadDatePicker TabIndex="12" AutoPostBack="false" ID="rdpWarrentyEndDate"
+                        runat="server" Width="180px">
+                        <DateInput ID="diWarrantyEndDate" runat="server" LabelCssClass="radLabelCss_Gray" DateFormat="MM/dd/yy"
+                            DisplayDateFormat="MM/dd/yy" OnDateSelected="EndDateSelectedChanged">
                         </DateInput>
-                        <Calendar ID="Calendar2" runat="server"  >
+                        <Calendar ID="cWarrantyEndDate" runat="server">
                         </Calendar>
-                        <ClientEvents  OnDateSelected="EndDateSelectedChanged" />
+                        <ClientEvents OnDateSelected="EndDateSelectedChanged" />
                         <DatePopupButton TabIndex="10" />
-                   </telerik:RadDatePicker>
+                    </telerik:RadDatePicker>
                     <%--<asp:RequiredFieldValidator ValidationGroup="valid" ID="RequiredFieldValidator2"
                         SetFocusOnError="true" Display="Dynamic" runat="server" ForeColor="Red" ControlToValidate="rdpwarrantytart"
                         ErrorMessage="*"></asp:RequiredFieldValidator>--%>
                     <asp:Label ID="lblWarrentyEnd" CssClass="linkText lblTextCss" runat="server"></asp:Label>
                 </td>
-
             </tr>
             <tr>
                 <td colspan="5" align="left">
                     <asp:Button ID="btnsave" CausesValidation="true" runat="server" Text="<%$Resources:Resource, Save%>"
                         Width="50px" OnClick="btnsave_Click" TabIndex="12" OnClientClick="javascript:return chknodes();" />
-                    <asp:Button ID="btncancel" runat="server"   Text="<%$Resources:Resource, Cancel%>"
+                    <asp:Button ID="btncancel" runat="server" Text="<%$Resources:Resource, Cancel%>"
                         Width="70px" OnClick="btncancel_Click" TabIndex="12" />
                     <asp:Button ID="btnclose" runat="server" Width="100" Text="<%$Resources:Resource, Close%>"
                         OnClientClick="Javascript:closewindow();" />
@@ -582,8 +562,8 @@
             </td>
             </tr>--%>
         </table>
-        <asp:Button ID="btngetdefaultfacility" Name="btngetdefaultfacility" runat="server" Skin="Default"
-            Visible="false" OnClick="btngetdefaultfacility_Click" />
+        <asp:Button ID="btngetdefaultfacility" Name="btngetdefaultfacility" runat="server"
+            Skin="Default" Visible="false" OnClick="btngetdefaultfacility_Click" />
     </div>
     <%-- <telerik:RadWindowManager ID="radWindowMgrSelectFacility" Visible="true" VisibleStatusbar="false"
         AutoSize="false" EnableShadow="true" ShowOnTopWhenMaximized="false" runat="server"
@@ -606,27 +586,22 @@
             <telerik:RadComboBox ID="cmbfacility" runat="server">
             </telerik:RadComboBox>
             &nbsp;&nbsp;
-            <asp:Button ID="btnOK" Text="OK" runat="server" Width="60" OnClick="btnOK_click" OnClientClick="javascript:return chkfacility();" />
+            <asp:Button ID="btnOK" Text="OK" runat="server" Width="60" OnClick="btnOK_click"
+                OnClientClick="javascript:return chkfacility();" />
         </ContentTemplate>
     </telerik:RadNotification>
-
-
-     <telerik:RadAjaxManager ID="rgmTypeProfile" runat="server">
+    <telerik:RadAjaxManager ID="rgmTypeProfile" runat="server">
         <AjaxSettings>
             <telerik:AjaxSetting AjaxControlID="ddltypename">
                 <UpdatedControls>
                     <telerik:AjaxUpdatedControl ControlID="rdpWarrentyEndDate" LoadingPanelID="RadAjaxLoadingPanel1" />
                 </UpdatedControls>
             </telerik:AjaxSetting>
-          
         </AjaxSettings>
     </telerik:RadAjaxManager>
-
     <telerik:RadAjaxLoadingPanel Skin="Default" ID="RadAjaxLoadingPanel1" runat="server"
         Height="30px" Width="30px">
-      
     </telerik:RadAjaxLoadingPanel>
-
     </form>
 </body>
 </html>

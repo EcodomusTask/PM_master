@@ -459,9 +459,9 @@
 
                 <td align="left" style="width: 220px">
                     <telerik:RadDatePicker TabIndex="9" AutoPostBack="false" ID="rdpWarrentyEndDate" runat="server">
-                        <DateInput ID="DateInput2" runat="server" LabelCssClass="radLabelCss_Gray"  DateFormat="MM/dd/yy" DisplayDateFormat="MM/dd/yy">
+                        <DateInput ID="idWarrantyEndDate" runat="server" LabelCssClass="radLabelCss_Gray"  DateFormat="MM/dd/yy" DisplayDateFormat="MM/dd/yy">
                         </DateInput>
-                        <Calendar ID="Calendar2" runat="server">
+                        <Calendar ID="cWarrantyEnddDate" runat="server">
                         </Calendar>
                         <DatePopupButton TabIndex="10" />
                     </telerik:RadDatePicker>
